@@ -108,7 +108,7 @@ export function diff(dom, parentDom, newVNode, oldVNode, context, isSvg, excessD
 				}
 
 				if (!force && c.shouldComponentUpdate!=null && c.shouldComponentUpdate(newVNode.props, s, cctx)===false) {
-					dom = newVNode._dom;
+					dom = c.base = newVNode._dom;
 					c.props = newVNode.props;
 					c.state = s;
 					c._dirty = false;
